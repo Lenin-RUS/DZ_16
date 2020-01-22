@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+<body>
+<h1>Контакты сайта</h1>
+<p>Cайт замутил {{name}} ({{mail}})</p>
+<p>Телефон: {{tel}}</p>
+<img src="{{ url_for('static', filename='img/ava.jpg') }}"><br><br>
+<a href="/">Вернутся на главную</a>
+</body>
+</html>

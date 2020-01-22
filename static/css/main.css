@@ -1,0 +1,17 @@
+body {
+color: black;
+font-family: 'Yanone Kaffeesatz', arial, helvetica, sans-serif;
+}
+
+h1 {
+color:#555
+
+}
+
+.name_menu {
+color: red;
+}
+
+li {
+    line-height: 3;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Форма поиска на сайте HH.RU</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<h1>Форма поиска на сайте HH.RU </h1>
+<p class="name_menu">Заполните поля ниже и нажмите "поиск"</p>
+
+<form method="post">
+    <p>
+        Введите текст вакансии
+        <input type="text_query" name="vac_text" placeholder="сварщик">
+    </p>
+    <p> выберите тип занятости
+        <select name="schedule_query">
+            <option selected value="full">Полная</option>
+            <option  value="part">Частичная</option>
+            <option  value="probation">Стажировка</option>
+        </select>
+    </p>
+    <p> Введите образование
+        <select name="education_level_query">
+            <option  value="secondary">Среднее</option>
+            <option  selected value="higher">Высшее</option>
+            <option  value="probation">Магистр</option>
+        </select>
+    </p>
+    <p> Командировки
+        <select name="business_trip_readiness_query">
+            <option selected value="ready">Готов</option>
+            <option  value="sometimes">Иногда</option>
+            <option  value="never">Не готов</option>
+        </select>
+    </p>
+    <p> Введите номер региона (113-Россия, 1-Москва, 1890-Липецкая область, 43-Калуга):
+        <input type="text" name="area_query" placeholder="1">
+    </p>
+
+
+    <input type="submit" value="ПОИСК">
+
+</form>
+<br>
+<a href="/">На главную</a>
+</body>
+</html>

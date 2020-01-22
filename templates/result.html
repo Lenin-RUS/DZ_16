@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <title>Результаты</title>
+</head>
+<body>
+<h1>Результат поиска</h1>
+<h2>Параметры запроса</h2>
+<p>Текст вакансии: {{text}}</p>
+<p>Занятость: {{employment}}</p>
+<p>Образование: {{education_level}}</p>
+<p>Командировки: {{business_trip_readiness}}</p>
+<p>Регион: {{area}}</p>
+<hr>
+<h2>Результат запроса</h2>
+<p>Всего найдено вакансий: {{all_found_vac}}</p>
+<p>Необходимые скилы: </p>
+<ol>
+    {% for skill in skills %}
+    <li>{{skill}} : указано в {{skills[skill][0]}} вакансиях (в {{skills[skill][1]}} случаях).  </li>
+    {% endfor %}
+</ol>
+<a href="/">Вернутся на главную</a>
+</body>
+</html>
