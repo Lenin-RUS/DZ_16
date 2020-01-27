@@ -64,6 +64,9 @@ def parser(params):
         all_skills[i] = [all_skills[i], str(round(all_skills[i]/all_keys*100,2))+'%']
         cursor.execute("insert into skill_req (skill_id, request_id, skill_num, skill_percent) VALUES (?,?,?,?)", (skill_id,mt_last_id, skill_num, skill_percent,))
 
+    # Запрос к базе
+    cursor.execute("select sk.skill_name, sr.skill_num, sr.skill_percent from skill_req sr, skills sk where sr.skill_id=sk.skill_id and sr.request_id=?", (mt_last_id,))
 
+    all_skills_from_sql=cursor.fetchall()
     conn.commit()
-    return all_found_vac, all_skills
+    return all_found_vac, all_skills_from_sql

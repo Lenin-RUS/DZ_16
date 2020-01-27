@@ -17,11 +17,22 @@
 <h2>Результат запроса</h2>
 <p>Всего найдено вакансий: {{all_found_vac}}</p>
 <p>Необходимые скилы: </p>
-<ol>
+<table border="1" cellpadding="5" >
+    <tr>
+        <td><b>Наименовнаие навыка</b></td>
+        <td><b>Встречено в вакансиях, ед</b></td>
+        <td><b>Встречено в вакансиях, %</b></td>
+    </tr>
     {% for skill in skills %}
-    <li>{{skill}} : указано в {{skills[skill][0]}} вакансиях (в {{skills[skill][1]}} случаях).  </li>
+    <tr>
+        <td align="left">{{skill[0]}}</td>
+        <td align="center">{{skill[1]}}</td>
+        <td align="center">{{skill[2]}}</td>
+    </tr>
     {% endfor %}
-</ol>
+
+
+</table>
 <a href="/">Вернутся на главную</a>
 </body>
 </html>
