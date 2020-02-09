@@ -69,7 +69,6 @@ def parser_orm(params):
     education=Education(params['education_level'])
     schedule=Schedule(params['employment'])
 
-
     if session.query(Area).filter(Area.name==params['area']).count()==0:session.add(area)
     if session.query(Trip_ready).filter(Trip_ready.name==params['business_trip_readiness']).count()==0:session.add(trip_ready)
     if session.query(Education).filter(Education.name==params['education_level']).count()==0:session.add(education)
