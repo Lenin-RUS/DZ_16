@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <title>Результаты</title>
 </head>
 <body>
@@ -17,22 +19,22 @@
 <h2>Результат запроса</h2>
 <p>Всего найдено вакансий: {{all_found_vac}}</p>
 <p>Необходимые скилы: </p>
-<table border="1" cellpadding="5" >
-    <tr>
-        <td><b>Наименовнаие навыка</b></td>
-        <td><b>Встречено в вакансиях, ед</b></td>
-        <td><b>Встречено в вакансиях, %</b></td>
+<table border="1" cellpadding="5" class="table">
+    <tr class="thead-light">
+        <td scope="col"><b>Наименовнаие навыка</b></td>
+        <td scope="col"><b>Встречено в вакансиях, ед</b></td>
+        <td scope="col"><b>Встречено в вакансиях, %</b></td>
     </tr>
     {% for skill in skills %}
-    <tr>
-        <td align="left">{{skill[0]}}</td>
-        <td align="center">{{skill[1]}}</td>
-        <td align="center">{{skill[2] | round(2)}}</td>
+    <tr class="thead-light">
+        <td align="left" scope="row">{{skill[0]}}</td>
+        <td align="center" scope="row">{{skill[1]}}</td>
+        <td align="center" scope="row">{{skill[2] | round(2)}}</td>
     </tr>
     {% endfor %}
 
 
 </table>
-<a href="/">Вернутся на главную</a>
+<a href="/" class="btn btn-warning">Вернутся на главную</a>
 </body>
 </html>
